@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Antimicrobial stewardship decision support based on a clearly labelled historical baseline guide." />
+  <title>ABX Steward — Antibiotic Decision Support</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b5d53'/%3E%3Cpath d='M17 32h30M32 17v30' stroke='white' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brandmark">+</span><span>ABX <b>Steward</b></span></a>
+    <nav aria-label="Primary navigation">
+      <button class="nav active" data-view="disease">By disease</button>
+      <button class="nav" data-view="drug">Drug library</button>
+      <button class="nav" data-view="safety">Safety checklist</button>
+    </nav>
+    <span class="baseline-badge">Baseline: JHH 2015–16</span>
+  </header>
+
+  <main>
+    <section class="warning" role="note">
+      <strong>Clinical decision support — not a prescription.</strong>
+      <span>This historical inpatient guide may be outdated and is not India-specific. Confirm with current local antibiogram, institutional policy, cultures, renal/hepatic function and an ID/microbiology specialist.</span>
+    </section>
+
+    <section id="diseaseView" class="view active-view">
+      <div class="intro-row">
+        <div><p class="eyebrow">DISEASE-BASED GUIDANCE</p><h1>Choose the infection. Check the patient.</h1><p class="lede">A stewardship-first pathway that surfaces source control, diagnostic checks and historical baseline options.</p></div>
+        <div class="stat"><strong>20</strong><span>clinical syndromes</span></div>
+      </div>
+      <div class="workspace">
+        <aside class="panel controls">
+          <label for="diseaseSearch">Find an infection</label>
+          <div class="search-wrap"><span>⌕</span><input id="diseaseSearch" type="search" placeholder="e.g. pneumonia, UTI, meningitis" /></div>
+          <label for="diseaseSelect">Clinical syndrome</label>
+          <select id="diseaseSelect"></select>
+          <div class="divider"></div>
+          <p class="field-title">Patient safeguards</p>
+          <label class="check"><input type="checkbox" id="allergy" /> Severe beta-lactam allergy</label>
+          <label class="check"><input type="checkbox" id="renal" /> Renal impairment / dialysis</label>
+          <label class="check"><input type="checkbox" id="pregnancy" /> Pregnant / breastfeeding</label>
+          <label class="check"><input type="checkbox" id="unstable" /> Unstable / sepsis red flags</label>
+          <label class="check"><input type="checkbox" id="immunocompromised" /> Immunocompromised / neutropenic</label>
+          <button id="reviewBtn" class="primary">Review guidance <span>→</span></button>
+        </aside>
+        <section id="recommendation" class="panel result" aria-live="polite"></section>
+      </div>
+    </section>
+
+    <section id="drugView" class="view">
+      <div class="intro-row"><div><p class="eyebrow">AGENT-SPECIFIC GUIDANCE</p><h1>Drug library</h1><p class="lede">Search spectrum, important limitations, monitoring and source pages.</p></div></div>
+      <div class="drug-layout">
+        <aside class="panel drug-list-panel"><div class="search-wrap"><span>⌕</span><input id="drugSearch" type="search" placeholder="Search a drug or spectrum" /></div><div id="drugList" class="drug-list"></div></aside>
+        <section id="drugDetail" class="panel result"></section>
+      </div>
+    </section>
+
+    <section id="safetyView" class="view">
+      <div class="intro-row"><div><p class="eyebrow">BEFORE THE FIRST DOSE</p><h1>Antimicrobial time-out</h1><p class="lede">A compact checklist for safer initiation and 48–72 hour review.</p></div></div>
+      <div class="safety-grid" id="safetyGrid"></div>
+    </section>
+  </main>
+  <footer><span>Baseline source: Johns Hopkins Antibiotic Guidelines 2015–2016 (adult inpatients).</span><span>For qualified healthcare professionals • Version 1.0</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
