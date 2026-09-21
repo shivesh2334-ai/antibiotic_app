@@ -4,7 +4,7 @@ A responsive, static antimicrobial stewardship decision-support application. It 
 
 ## Clinical scope and warning
 
-The content is derived from and paraphrases the attached **Johns Hopkins Antibiotic Guidelines 2015–2016**, written for adult inpatients. This historical baseline is not India-specific and must not be treated as current prescribing authority. Recommendations require confirmation against current national/local guidance, institutional policy, the local antibiogram, microbiology, patient-specific factors and specialist advice.
+The disease pathways are derived from and paraphrase the attached **ICMR Treatment Guidelines for Antimicrobial Use in Common Syndromes, 2nd edition (2019)**. This India-focused guideline remains a dated baseline and must not be treated as current prescribing authority. Recommendations require confirmation against current national/local guidance, institutional policy, the local antibiogram, microbiology, patient-specific factors and specialist advice.
 
 The application intentionally does not automate a prescription or calculate patient-specific doses.
 
